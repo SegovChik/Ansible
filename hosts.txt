@@ -1,0 +1,7 @@
+[test_group]
+slave47 ansible_host=172.31.34.47
+slave221 ansible_host=172.31.37.221
+slave184 ansible_host=172.31.43.184
+[web_server]
+slave48 ansible_host=172.31.40.48 
+

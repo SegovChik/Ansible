@@ -1,0 +1,17 @@
+- name: install apache and host simple html
+  hosts: web_server
+  become: yes
+
+  vars:
+   source_file: ./simple.html
+   destin_file: /var/www/html
+
+  tasks:
+  - name: Copy html to server
+    copy: src={{ source_file }}   dest={{ destin_file }} mode=0555
+    notify: Restart Apache
+
+  handlers:
+  - name: Restart Apache
+    service: name=httpd state=restarted  
+  
